@@ -41,7 +41,7 @@ provisioner:
       postgresql15:
         postgresql_version: "15"
       postgresql16:
-      postgresql_version: "16"
+        postgresql_version: "16"
   playbooks:
     converge: ../resources/playbook.yml
 scenario:
