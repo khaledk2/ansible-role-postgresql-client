@@ -12,24 +12,50 @@ platforms:
     platform: linux/arm64
     image: geerlingguy/docker-rockylinux9-ansible:latest
     pre_build_image: true
+    privileged: true
+    cgroupns: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+
   - name: postgresql15-arm
     platform: linux/arm64
     image: geerlingguy/docker-rockylinux9-ansible:latest
     pre_build_image: true
+    privileged: true
+    cgroupns: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
   - name: postgresql16-arm
     platform: linux/arm64
     image: geerlingguy/docker-rockylinux9-ansible:latest
     pre_build_image: true
+    privileged: true
+    cgroupns: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
   - name: postgresql17-arm
     platform: linux/arm64
     image: geerlingguy/docker-rockylinux9-ansible:latest
     pre_build_image: true
+    privileged: true
+    cgroupns: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
   - name: postgresql18-arm
     platform: linux/arm64
     image: geerlingguy/docker-rockylinux9-ansible:latest
     pre_build_image: true
+    privileged: true
+    cgroupns: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      # Forces Ansible to use a universally accessible directory inside the container
+      remote_tmp: /tmp/.ansible/tmp
+      local_tmp: /tmp/.ansible/tmp
   lint:
     name: ansible-lint
   inventory:
