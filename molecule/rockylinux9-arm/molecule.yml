@@ -14,8 +14,8 @@ platforms:
     image: geerlingguy/docker-rockylinux9-ansible:latest
   - name: postgresql16-arm
     image: geerlingguy/docker-rockylinux9-ansible:latest
-  - name: postgresql17-arm
-    image: geerlingguy/docker-rockylinux9-ansible:latest
+  #- name: postgresql17-arm
+  #  image: geerlingguy/docker-rockylinux9-ansible:latest
     privileged: true
   - name: postgresql18-arm
     image: geerlingguy/docker-rockylinux9-ansible:latest
@@ -32,8 +32,8 @@ provisioner:
         postgresql_version: "15"
       postgresql16-arm:
         postgresql_version: "16"
-      postgresql17-arm:
-        postgresql_version: "17"
+      #postgresql17-arm:
+      #  postgresql_version: "17"
       postgresql18-arm:
         postgresql_version: "18"
   playbooks:
