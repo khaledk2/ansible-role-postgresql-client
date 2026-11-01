@@ -1,0 +1,69 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint: |
+    yamllint .
+    ansible-lint
+    flake8
+platforms:
+  - name: postgresql14-arm
+    image: geerlingguy/docker-rockylinux9-ansible:latest
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroupns: host
+    privileged: true
+    pre_build_image: true
+  - name: postgresql15-arm
+    image: geerlingguy/docker-rockylinux9-ansible:latest
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroupns: host
+    privileged: true
+    pre_build_image: true
+  - name: postgresql16-arm
+    image: geerlingguy/docker-rockylinux9-ansible:latest
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroupns: host
+    privileged: true
+    pre_build_image: true
+  - name: postgresql17-arm
+    image: geerlingguy/docker-rockylinux9-ansible:latest
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroupns: host
+    privileged: true
+    pre_build_image: true
+  - name: postgresql18-arm
+    image: geerlingguy/docker-rockylinux9-ansible:latest
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroupns: host
+    privileged: true
+    pre_build_image: true
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+  inventory:
+    host_vars:
+      postgresql_exact:
+      postgresql14:
+        postgresql_version: "14"
+      postgresql15:
+        postgresql_version: "15"
+      postgresql16:
+        postgresql_version: "16"
+      postgresql17:
+        postgresql_version: "17"
+      postgresql18:
+        postgresql_version: "18"
+  playbooks:
+    converge: ../resources/playbook.yml
+scenario:
+  name: rockylinux9
+verifier:
+  name: testinfra
+  directory: ../resources/tests/
