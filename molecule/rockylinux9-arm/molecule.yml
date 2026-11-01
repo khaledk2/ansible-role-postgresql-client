@@ -13,16 +13,19 @@ platforms:
     image: geerlingguy/docker-rockylinux9-ansible:latest
     pre_build_image: true
     privileged: true
-    cgroupns: host
+    env:
+      container: docker
     volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+       - /sys/fs/cgroup:/sys/fs/cgroup:rw
+
 
   - name: postgresql15-arm
     platform: linux/arm64
     image: geerlingguy/docker-rockylinux9-ansible:latest
     pre_build_image: true
     privileged: true
-    cgroupns: host
+    env:
+      container: docker
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
   - name: postgresql16-arm
@@ -30,7 +33,8 @@ platforms:
     image: geerlingguy/docker-rockylinux9-ansible:latest
     pre_build_image: true
     privileged: true
-    cgroupns: host
+    env:
+      container: docker
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
   - name: postgresql17-arm
@@ -38,7 +42,8 @@ platforms:
     image: geerlingguy/docker-rockylinux9-ansible:latest
     pre_build_image: true
     privileged: true
-    cgroupns: host
+    env:
+      container: docker
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
   - name: postgresql18-arm
@@ -46,7 +51,8 @@ platforms:
     image: geerlingguy/docker-rockylinux9-ansible:latest
     pre_build_image: true
     privileged: true
-    cgroupns: host
+    env:
+      container: docker
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
 provisioner:
