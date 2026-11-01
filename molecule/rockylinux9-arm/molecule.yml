@@ -26,21 +26,18 @@ platforms:
     image: geerlingguy/docker-rockylinux9-ansible:latest
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
-    cgroupns: host
     privileged: true
     pre_build_image: true
   - name: postgresql17-arm
     image: geerlingguy/docker-rockylinux9-ansible:latest
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
-    cgroupns: host
     privileged: true
     pre_build_image: true
   - name: postgresql18-arm
     image: geerlingguy/docker-rockylinux9-ansible:latest
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
-    cgroupns: host
     privileged: true
     pre_build_image: true
 provisioner:
