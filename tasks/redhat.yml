@@ -39,6 +39,7 @@
     regexp: 'rhel-\$releasever_major\.\$releasever_minor-'
     replace: 'rhel-$releasever_major-'
     backup: yes
+  when: ansible_facts.get('architecture') is search("x86_64")
 
 - name: Postgres | install client packages
   become: true
