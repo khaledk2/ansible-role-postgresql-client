@@ -10,8 +10,9 @@ on:
 jobs:
 
   list-scenarios:
-    runs-on: ubuntu-24.04-arm
+    #runs-on: ubuntu-24.04-arm
     outputs:
+      runner: [ubuntu-24.04, ubuntu-24.04-arm]
       matrix: ${{ steps.listscenarios.outputs.scenarios }}
     steps:
       - uses: actions/checkout@v4
