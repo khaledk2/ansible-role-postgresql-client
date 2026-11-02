@@ -1,13 +1,10 @@
 ---
 
-- name: Prepare Rocky images for Ansible become
-  hosts: all
-  become: true
-  tasks:
-    - name: Install sudo
-      ansible.builtin.dnf:
-        name: sudo
-        state: present
+
+- name: Install sudo
+  ansible.builtin.dnf:
+    name: sudo
+    state: present
 
 - name: Import a key for postgres (x86_64)
   become: true
