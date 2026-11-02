@@ -12,49 +12,23 @@ platforms:
     platform: linux/arm64
     pre_build_image: true
     image: rockylinux:9
-    privileged: true
-    env:
-      ANSIBLE_REMOTE_TMP: /tmp/.ansible/tmp
-      ANSIBLE_LOCAL_TMP: /tmp/.ansible/tmp
-    config_options:
-      defaults:
-        remote_tmp: /tmp/.ansible/tmp
-        local_tmp: /tmp/.ansible/tmp
-
 
   - name: postgresql15-arm
     platform: linux/arm64
     image: rockylinux:9
-    privileged: true
-    env:
-      container: docker
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+
+
   - name: postgresql16-arm
     platform: linux/arm64
     image: rockylinux:9
-    privileged: true
-    env:
-      container: docker
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+
   - name: postgresql17-arm
     platform: linux/arm64
     image: rockylinux:9
-    privileged: true
-    env:
-      container: docker
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+
   - name: postgresql18-arm
     platform: linux/arm64
     image: rockylinux:9
-    user: root
-    privileged: true
-    env:
-      container: docker
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:rw
 provisioner:
   name: ansible
   config_options:
