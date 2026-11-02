@@ -12,22 +12,37 @@ platforms:
     platform: linux/arm64
     image: rockylinux/rockylinux:9
     pre_build_image: true
+    config_options:
+      defaults:
+        remote_tmp: /tmp/.ansible/tmp
   - name: postgresql15
     platform: linux/arm64
     pre_build_image: true
     image: rockylinux/rockylinux:9
+    config_options:
+      defaults:
+        remote_tmp: /tmp/.ansible/tmp
   - name: postgresql16
     platform: linux/arm64
     image: rockylinux/rockylinux:9
     pre_build_image: true
+    config_options:
+      defaults:
+        remote_tmp: /tmp/.ansible/tmp
   - name: postgresql17
     platform: linux/arm64
     image: rockylinux/rockylinux:9
     pre_build_image: true
+    config_options:
+      defaults:
+        remote_tmp: /tmp/.ansible/tmp
   - name: postgresql18
     platform: linux/arm64
     image: rockylinux/rockylinux:9
     pre_build_image: true
+    config_options:
+      defaults:
+        remote_tmp: /tmp/.ansible/tmp
 provisioner:
   name: ansible
   lint:
