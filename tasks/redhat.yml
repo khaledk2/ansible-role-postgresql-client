@@ -3,6 +3,7 @@
 
 - name: Install sudo
   ansible.builtin.dnf:
+    become: true
     name: sudo
     state: present
 
