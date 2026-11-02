@@ -19,28 +19,24 @@ platforms:
     pre_build_image: true
     image: rockylinux/rockylinux:9
     privileged: true
-    docker_user: root
 
   - name: postgresql16
     platform: linux/arm64
     image: rockylinux/rockylinux:9
     pre_build_image: true
     privileged: true
-    docker_user: root
 
   - name: postgresql17
     platform: linux/arm64
     image: rockylinux/rockylinux:9
     pre_build_image: true
     privileged: true
-    docker_user: root
 
   - name: postgresql18
     platform: linux/arm64
     image: rockylinux/rockylinux:9
     pre_build_image: true
     privileged: true
-    docker_user: root
 
 provisioner:
   name: ansible
