@@ -33,10 +33,10 @@ platforms:
     #privileged: true
 
   - name: postgresql18
-    platform: linux/arm64
+    #platform: linux/arm64
     image: rockylinux/rockylinux:9
     pre_build_image: true
-    privileged: true
+    #privileged: true
 
 provisioner:
   name: ansible
