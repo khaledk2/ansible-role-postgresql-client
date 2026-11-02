@@ -15,8 +15,13 @@ jobs:
       matrix: ${{ steps.listscenarios.outputs.scenarios }}
     steps:
       - uses: actions/checkout@v4
-      - id: listscenarios
-        uses: ome/action-ansible-molecule-list-scenarios@main
+      - name: List Molecule scenarios
+        id: listscenarios
+        run: |
+            echo 'scenarios={"include":[
+              {"scenario":"arm_test","runner":"ubuntu-24.04-arm"},
+              {"scenario":"intel_test","runner":"ubuntu-24.04"}
+            ]}' >> "$GITHUB_OUTPUT"
 
   test:
     name: Test
