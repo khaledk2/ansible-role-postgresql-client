@@ -10,8 +10,8 @@ lint: |
 platforms:
   - name: postgresql14-arm
     platform: linux/arm64
-    image: geerlingguy/docker-rockylinux9-ansible:latest
-    user: root
+    pre_build_image: true
+    image: rockylinux:9
     privileged: true
     env:
       ANSIBLE_REMOTE_TMP: /tmp/.ansible/tmp
@@ -24,8 +24,7 @@ platforms:
 
   - name: postgresql15-arm
     platform: linux/arm64
-    image: geerlingguy/docker-rockylinux9-ansible:latest
-    user: root
+    image: rockylinux:9
     privileged: true
     env:
       container: docker
@@ -33,8 +32,7 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
   - name: postgresql16-arm
     platform: linux/arm64
-    image: geerlingguy/docker-rockylinux9-ansible:latest
-    user: root
+    image: rockylinux:9
     privileged: true
     env:
       container: docker
@@ -42,8 +40,7 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
   - name: postgresql17-arm
     platform: linux/arm64
-    image: geerlingguy/docker-rockylinux9-ansible:latest
-    user: root
+    image: rockylinux:9
     privileged: true
     env:
       container: docker
@@ -51,7 +48,7 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
   - name: postgresql18-arm
     platform: linux/arm64
-    image: geerlingguy/docker-rockylinux9-ansible:latest
+    image: rockylinux:9
     user: root
     privileged: true
     env:
