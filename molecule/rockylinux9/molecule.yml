@@ -11,18 +11,23 @@ platforms:
   - name: postgresql14
     platform: linux/arm64
     image: rockylinux/rockylinux:9
+    pre_build_image: true
   - name: postgresql15
     platform: linux/arm64
+    pre_build_image: true
     image: rockylinux/rockylinux:9
   - name: postgresql16
     platform: linux/arm64
     image: rockylinux/rockylinux:9
+    pre_build_image: true
   - name: postgresql17
     platform: linux/arm64
     image: rockylinux/rockylinux:9
+    pre_build_image: true
   - name: postgresql18
     platform: linux/arm64
     image: rockylinux/rockylinux:9
+    pre_build_image: true
 provisioner:
   name: ansible
   lint:
