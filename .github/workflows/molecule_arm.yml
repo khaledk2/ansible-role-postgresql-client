@@ -10,7 +10,7 @@ on:
 jobs:
 
   list-scenarios:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     outputs:
       matrix: ${{ steps.listscenarios.outputs.scenarios }}
     steps:
@@ -22,12 +22,11 @@ jobs:
     name: Test
     needs:
       - list-scenarios
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     strategy:
       # Keep running so we can see if other tests pass
       fail-fast: false
       matrix:
-        runner: [ubuntu-24.04, ubuntu-24.04-arm]
         scenario: ${{fromJson(needs.list-scenarios.outputs.matrix)}}
     steps:
       - uses: actions/checkout@v4
